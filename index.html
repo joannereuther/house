@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Designing a Safe Home: Student Activity Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Space+Grotesk:wght@500..700&display=swap">
+<style>
+:root{--bg:#f3efe6;--card:#fbf9f4;--ink:#13263b;--mute:#566574;--line:#d9d3c4;--accent:#e8743b;--blue:#256587;--teal:#2f8f83;--hl:#fde7d8;--inbg:#ffffff;--fxh:#f5cdbf;--head:#13263b;--headink:#f3efe6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a28;--card:#152538;--ink:#f3efe6;--mute:#a3b4c4;--line:#2b4157;--blue:#7dbad8;--teal:#4fb3a6;--hl:#4a2f22;--inbg:#0e1a28;--fxh:#5a3328;--head:#f3efe6;--headink:#13263b}}
+:root[data-theme="dark"]{--bg:#0e1a28;--card:#152538;--ink:#f3efe6;--mute:#a3b4c4;--line:#2b4157;--blue:#7dbad8;--teal:#4fb3a6;--hl:#4a2f22;--inbg:#0e1a28;--fxh:#5a3328;--head:#f3efe6;--headink:#13263b}
+html{height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.55}
+h1,h2,h3{font-family:"Space Grotesk",Inter,Arial,sans-serif;line-height:1.15;margin:0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 20px}
+.bar-in{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:14px;font-size:14px;color:var(--mute)}
+.track{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .25s}
+main{max-width:980px;margin:0 auto;padding:24px 20px 56px;display:flex;flex-direction:column;gap:24px}
+header.hero{background:var(--head);color:var(--headink);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:18px}
+header.hero h1{font-size:clamp(28px,5vw,44px)}
+header.hero p{margin:0;opacity:.85}
+.ids{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.ids label{font-size:13px;display:flex;flex-direction:column;gap:4px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px}
+section h2{font-size:28px}
+section h3{font-size:19px;color:var(--blue)}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+p{margin:0}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--inbg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+textarea{resize:vertical;min-height:44px}
+input[type=text]:focus,textarea:focus,button:focus-visible,.mk:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.hero input{background:#fff;color:#13263b;border-color:transparent}
+.hero label{color:var(--headink)}
+input.inl{display:inline-block;width:96px;margin:0 4px;padding:4px 8px}
+input.sm{width:72px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th{background:var(--head);color:var(--headink);text-align:left;padding:10px 12px;font-size:14px}
+td{border-bottom:1px solid var(--line);padding:8px;vertical-align:top}
+td:first-child{width:22%}
+ol.notes{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ol.notes li{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+ol.notes li.on{background:var(--hl);border-color:var(--accent)}
+.num{flex:none;width:28px;height:28px;border-radius:50%;background:#b8402a;color:#fff;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center}
+.plan{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:8px}
+.plan svg{min-width:640px;display:block}
+.room{fill:var(--card);stroke:var(--mute);stroke-width:1}
+.t{font:500 14px Inter,Arial,sans-serif;fill:var(--ink)}
+.ts{font:400 12px Inter,Arial,sans-serif;fill:var(--mute)}
+.th{font:600 14px "Space Grotesk",Inter,Arial,sans-serif;fill:var(--ink)}
+.tsi{font:400 12px Inter,Arial,sans-serif;fill:var(--ink)}
+.dw{fill:var(--teal)}
+.fx{fill:var(--line);stroke:var(--mute);stroke-width:.5}
+.fxh{fill:var(--fxh);stroke:#b8402a;stroke-width:.5}
+.lead{stroke:var(--mute);stroke-width:.5;stroke-dasharray:3 3}
+.mk{cursor:pointer}
+.mk circle{fill:#b8402a;stroke:#b8402a;stroke-width:1}
+.mk text{fill:#fff;font:600 12px Inter,Arial,sans-serif}
+.mk.on circle{stroke:var(--ink);stroke-width:4}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.cards label{display:flex;flex-direction:column;gap:4px;border:2px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;background:var(--bg)}
+.cards label:has(input:checked){border-color:var(--accent);background:var(--hl)}
+.cards input{position:absolute;opacity:0;pointer-events:none}
+.cards b{font-family:"Space Grotesk",Inter,Arial,sans-serif;font-size:17px}
+.cards span{font-size:14px;color:var(--mute)}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px}
+.tips label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.tips input{margin-top:4px;width:18px;height:18px;accent-color:#e8743b}
+.tips label.dis{opacity:.5;cursor:not-allowed}
+.pad{display:flex;flex-direction:column;gap:8px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tools button{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.tools button.sw{width:30px;height:30px;padding:0;border-radius:50%;border:3px solid var(--line)}
+.tools button.sw.on{border-color:var(--ink)}
+canvas{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;touch-action:none;cursor:crosshair;display:block}
+.note{font-size:14px;color:var(--mute)}
+.btn{font:inherit;font-weight:600;background:var(--accent);color:#13263b;border:0;border-radius:10px;padding:10px 18px;cursor:pointer}
+.btn.alt{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+#out{min-height:160px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+@media (max-width:600px){.ids{grid-template-columns:1fr}section{padding:20px}header.hero{padding:22px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="bar-in"><span id="ptxt">0% complete</span><div class="track" aria-hidden="true"><div class="fill" id="pfill"></div></div></div></div>
+<main>
+<header class="hero">
+<span class="tag" style="color:#f0a27a">Architecture · Grades 9–12</span>
+<h1>Designing a Safe Home</h1>
+<p>Student activity sheet. Type your answers, drag your pen on the drawing pads, and your work saves in this browser as you go.</p>
+<div class="ids">
+<label>Name<input type="text" data-k="name" data-l="Name"></label>
+<label>Period<input type="text" data-k="period" data-l="Period"></label>
+<label>Date<input type="text" data-k="date" data-l="Date"></label>
+</div>
+</header>
+
+<section id="s-donow"></section>
+<section id="s-notes"></section>
+<section id="s-p1"></section>
+<section id="s-p2"></section>
+<section id="s-p3"></section>
+<section id="s-exit"></section>
+<section id="s-done"></section>
+</main>
+
+<script>
+var KEY='safe-home-sheet-v1';
+var S={};
+try{S=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){S={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function $(s){return document.querySelector(s)}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+function ta(k,l,r){return '<textarea data-k="'+k+'" data-l="'+esc(l)+'" aria-label="'+esc(l)+'" rows="'+(r||2)+'"></textarea>'}
+function inp(k,l,c){return '<input type="text" class="'+(c||'')+'" data-k="'+k+'" data-l="'+esc(l)+'" aria-label="'+esc(l)+'">'}
+function table(heads,rows){return '<div class="scroll"><table><thead><tr>'+heads.map(function(h){return '<th>'+h+'</th>'}).join('')+'</tr></thead><tbody>'+rows.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+c+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div>'}
+function pad(id){return '<div class="pad"><div class="tools" data-pad="'+id+'"><button class="sw on" data-c="#13263b" style="background:#13263b" aria-label="Navy pen"></button><button class="sw" data-c="#c2412a" style="background:#c2412a" aria-label="Red pen"></button><button class="sw" data-c="#2f8f83" style="background:#2f8f83" aria-label="Teal pen"></button><button class="sw" data-c="#2f6f9f" style="background:#2f6f9f" aria-label="Blue pen"></button><button data-c="#ffffff" class="er">Erase</button><button class="clr">Clear</button></div><canvas id="'+id+'" aria-label="Drawing pad"></canvas></div>'}
+
+$('#s-donow').innerHTML='<span class="tag">Do Now · 5 minutes</span><h2>You are the architect</h2><p>List five things in a house that could hurt someone. Think about fire, air, water, weather, and falls.</p>'+
+[1,2,3,4,5].map(function(i){return inp('dn'+i,'Do Now hazard '+i)}).join('');
+
+var FIRE=['Kitchen','Living areas','Laundry','Garage'];
+var CO=["Why can't you detect it without an alarm?","Name three sources","Early symptoms","Two ways to prevent it"];
+var RN=["What is it, and where does it come from?","How does it get into a house?","EPA action level (pCi/L)","Two ways to prevent it"];
+var MO=["Three problems it causes","Three design fixes","Healthy indoor humidity range"];
+function qtable(pref,qs,h){return table([h||'Question','Your notes'],qs.map(function(q,i){return [q,ta(pref+i,pref+': '+q)]}))}
+$('#s-notes').innerHTML='<span class="tag">Guided notes</span><h2>Fill in the notes as the slides run</h2><p class="note">Use one pattern for every hazard: what it is, how it reaches people, and what a designer does.</p>'+
+'<h3>1. Fire</h3>'+table(['Where','Hazard','Prevention'],FIRE.map(function(w,i){return ['<b>'+w+'</b>',ta('fire_h'+i,'Fire hazard, '+w),ta('fire_p'+i,'Fire prevention, '+w)]}))+
+'<p>Every bedroom needs '+inp('f1','Ways out','inl sm')+' ways out. An egress window needs about '+inp('f2','Square feet of clear opening','inl sm')+' sq ft of clear opening and a sill no higher than '+inp('f3','Sill height in inches','inl sm')+' in. Smoke alarms go in '+inp('f4','Alarm location 1','inl')+', '+inp('f5','Alarm location 2','inl')+', and '+inp('f6','Alarm location 3','inl')+'.</p>'+
+'<p><b>Sketch one bedroom with its two exits (door and window).</b></p>'+pad('padBed')+
+'<h3>2. Carbon monoxide (CO)</h3>'+qtable('co',CO)+
+'<h3>3. Radon</h3>'+qtable('rn',RN)+
+'<h3>4. Excess moisture</h3>'+qtable('mo',MO);
+
+var NOTES=[
+['Kitchen','The gas range sits right beside the back door, the kitchen\u2019s closest exit. Dish towels hang next to the burners.'],
+['Bedroom 3 (upstairs)','One door. One small window, 52 in. above the floor, with a clear opening of about 3 sq ft.'],
+['Upstairs hall and bedrooms','The only smoke alarm is in the basement.'],
+['Attached garage','It shares a wall and an ordinary door with the kitchen. Gasoline cans and paint are stored next to the gas water heater.'],
+['Mechanical closet','The furnace sits in a closet beside Bedroom 1. There is no carbon monoxide alarm in the house.'],
+['Basement','The concrete slab has visible cracks and a sump pit. The family has never tested for radon.'],
+['Yard and basement','The yard slopes toward the house, and the downspouts end at the foundation wall. The basement smells musty.'],
+['Bathroom','No window and no exhaust fan. The outlet beside the sink is a standard outlet.'],
+['Main stairs','Risers are 9 in. tall. There is no handrail, one dim bulb at the top, and a loose rug at the bottom.'],
+['Laundry closet','The dryer vent duct is crushed behind the dryer.']];
+var MK=[[300,292],[500,104],[250,154],[120,310],[220,60],[330,520],[630,340],[290,344],[365,344],[220,344]];
+var mkSvg=MK.map(function(p,i){return '<g class="mk" data-n="'+(i+1)+'" tabindex="0" role="button" aria-label="Plan note '+(i+1)+': '+esc(NOTES[i][0])+'"><circle cx="'+p[0]+'" cy="'+p[1]+'" r="11"/><text x="'+p[0]+'" y="'+p[1]+'" text-anchor="middle" dominant-baseline="central">'+(i+1)+'</text></g>'}).join('');
+var PLAN='<svg viewBox="0 0 680 650" role="img" aria-label="Floor plans of the Miller house: second floor, first floor, and basement"><title>Miller house floor plans</title>'+
+'<text class="th" x="50" y="30">Second floor</text>'+
+'<rect class="room" x="50" y="44" width="140" height="80"/><rect class="room" x="190" y="44" width="60" height="80"/><rect class="room" x="250" y="44" width="160" height="80"/><rect class="room" x="410" y="44" width="180" height="80"/><rect class="room" x="50" y="124" width="430" height="60"/><rect class="room" x="480" y="124" width="110" height="60"/>'+
+'<text class="t" x="120" y="84" text-anchor="middle" dominant-baseline="central">Bedroom 1</text><text class="ts" x="220" y="84" text-anchor="middle" dominant-baseline="central">Furnace</text><text class="t" x="330" y="84" text-anchor="middle" dominant-baseline="central">Bedroom 2</text><text class="t" x="500" y="76" text-anchor="middle" dominant-baseline="central">Bedroom 3</text><text class="t" x="350" y="154" text-anchor="middle" dominant-baseline="central">Upstairs hall</text><text class="t" x="520" y="154" text-anchor="middle" dominant-baseline="central">Stairs</text>'+
+'<path d="M550 124V184M560 124V184M570 124V184M580 124V184" stroke="var(--mute)" stroke-width=".5" fill="none"/>'+
+'<rect class="dw" x="100" y="42" width="30" height="5"/><rect class="dw" x="310" y="42" width="40" height="5"/><rect class="dw" x="495" y="42" width="14" height="5"/><text class="ts" x="502" y="36" text-anchor="middle">small high window</text>'+
+'<rect class="dw" x="100" y="122" width="16" height="5"/><rect class="dw" x="320" y="122" width="16" height="5"/><rect class="dw" x="440" y="122" width="16" height="5"/>'+
+'<text class="th" x="50" y="224">First floor</text>'+
+'<rect class="room" x="50" y="234" width="140" height="160"/><rect class="room" x="190" y="234" width="140" height="90"/><rect class="room" x="330" y="234" width="260" height="90"/><rect class="room" x="190" y="324" width="60" height="70"/><rect class="room" x="250" y="324" width="80" height="70"/><rect class="room" x="330" y="324" width="100" height="70"/><rect class="room" x="430" y="324" width="160" height="70"/>'+
+'<text class="t" x="120" y="360" text-anchor="middle" dominant-baseline="central">Garage</text><text class="t" x="228" y="300" text-anchor="middle" dominant-baseline="central">Kitchen</text><text class="t" x="460" y="280" text-anchor="middle" dominant-baseline="central">Living room</text><text class="ts" x="220" y="372" text-anchor="middle" dominant-baseline="central">Laundry</text><text class="t" x="290" y="372" text-anchor="middle" dominant-baseline="central">Bath</text><text class="t" x="365" y="372" text-anchor="middle" dominant-baseline="central">Stairs</text><text class="t" x="510" y="360" text-anchor="middle" dominant-baseline="central">Entry</text>'+
+'<path d="M398 324V394M408 324V394M418 324V394" stroke="var(--mute)" stroke-width=".5" fill="none"/>'+
+'<rect class="fxh" x="280" y="240" width="44" height="22"/><text class="tsi" x="302" y="251" text-anchor="middle" dominant-baseline="central">range</text>'+
+'<rect class="fx" x="138" y="244" width="44" height="24"/><text class="tsi" x="160" y="256" text-anchor="middle" dominant-baseline="central">heater</text>'+
+'<rect class="fxh" x="64" y="244" width="40" height="24"/><text class="tsi" x="84" y="256" text-anchor="middle" dominant-baseline="central">fuel</text>'+
+'<rect class="dw" x="256" y="232" width="16" height="5"/><rect class="dw" x="500" y="392" width="16" height="5"/><rect class="dw" x="90" y="392" width="60" height="5"/><rect class="dw" x="188" y="280" width="5" height="16"/><rect class="dw" x="440" y="232" width="60" height="5"/>'+
+'<path d="M606 240V444H590" stroke="var(--mute)" stroke-width="1.5" fill="none"/><line class="lead" x1="620" y1="340" x2="608" y2="340"/>'+
+'<text class="th" x="50" y="434">Basement</text>'+
+'<rect class="room" x="50" y="444" width="540" height="140"/><text class="t" x="320" y="470" text-anchor="middle" dominant-baseline="central">Unfinished basement slab</text>'+
+'<path d="M230 490L260 510L245 530L290 552" stroke="var(--mute)" stroke-width="1.5" fill="none"/>'+
+'<rect class="fx" x="130" y="520" width="30" height="28"/><text class="ts" x="145" y="565" text-anchor="middle">sump pit</text>'+
+'<circle class="dw" cx="470" cy="500" r="9"/><text class="ts" x="470" y="525" text-anchor="middle">smoke alarm</text><text class="t" x="545" y="540" text-anchor="middle" dominant-baseline="central">Stairs</text>'+
+'<rect class="dw" x="50" y="614" width="16" height="6"/><text class="ts" x="74" y="618" dominant-baseline="central">Door or window</text><circle cx="230" cy="617" r="8" fill="#b8402a"/><text class="ts" x="246" y="618" dominant-baseline="central">Number matches the plan note</text>'+
+mkSvg+'</svg>';
+
+$('#s-p1').innerHTML='<span class="tag">Activity Part 1 · Pairs · 8 minutes</span><h2>Hazard hunt</h2><p>The Miller family is buying this two-story, three-bedroom house. Read the plan notes and study the floor plan. Tap a numbered circle on the plan, or a note below, to match them up. Find at least eight hazards and write a fix for each.</p>'+
+'<div class="plan">'+PLAN+'</div>'+
+'<ol class="notes">'+NOTES.map(function(n,i){return '<li data-n="'+(i+1)+'"><span class="num">'+(i+1)+'</span><span><b>'+n[0]+'.</b> '+n[1]+'</span></li>'}).join('')+'</ol>'+
+'<h3>Your hazards and fixes</h3>'+
+table(['Note #','Hazard you found','Your fix'],[1,2,3,4,5,6,7,8,9,10].map(function(i){return [inp('hz'+i+'n','Hazard '+i+' note number','sm'),ta('hz'+i+'h','Hazard '+i+': what is the hazard?'),ta('hz'+i+'f','Hazard '+i+': your fix')]}))+
+'<p class="note">Rows 9 and 10 are optional, for early finishers.</p>'+
+'<h3>Rank your top three</h3><p>Which three hazards are most dangerous, from most to least? Explain your ranking in one sentence.</p>'+ta('rank','Ranking of top three hazards and why',3);
+
+var REG=[['A','Gulf or Atlantic coast','Hurricanes and storm surge','The lot sits a few feet above sea level and floods in big storms.'],['B','Central U.S.','Tornadoes','The lot is open prairie with few trees for wind protection.'],['C','West Coast','Earthquakes','The lot sits near an active fault line.'],['D','Northeast or northern states','Heavy snow and nor\u2019easters','Winters bring deep snow, ice, and freezing ground.'],['E','Western wildfire area','Wildfire embers','Dry brush and trees grow close to the lot.']];
+$('#s-p2').innerHTML='<span class="tag">Activity Part 2 · Groups of 3–4 · 9 minutes</span><h2>Regional redesign</h2><p>Your teacher draws a region card for your group (pulls it from the pile). Select that card here. The Miller family is moving the same house to that region. Sketch a side view and label at least three changes that protect it from the main hazard.</p>'+
+'<div class="cards" role="radiogroup" aria-label="Region card">'+REG.map(function(r){return '<label><input type="radio" name="card" value="'+r[0]+'"><b>Card '+r[0]+': '+r[1]+'</b><span>Hazard: '+r[2]+'</span><span>'+r[3]+'</span></label>'}).join('')+'</div>'+
+'<h3>Your changes</h3>'+
+table(['Change you made','Hazard it reduces','Why it works'],[1,2,3].map(function(i){return [ta('ch'+i+'c','Change '+i,2),ta('ch'+i+'h','Change '+i+' hazard it reduces',2),ta('ch'+i+'w','Change '+i+' why it works',2)]}))+
+'<h3>Sketch pad</h3><p class="note">Draw a simple side view of the house and label your changes. Use your finger, a stylus, or a mouse.</p>'+pad('padReg');
+
+$('#s-p3').innerHTML='<span class="tag">Activity Part 3 · Whole class · 5 minutes</span><h2>Gallery share and comparison</h2><p>Walk the room, read at least two other groups\u2019 sketches, and fill in the chart. Put your own region in the first row.</p>'+
+table(['Region','Main hazard','Building techniques','One technique another region also uses'],[0,1,2].map(function(i){return [inp('cm'+i+'r',(i?'Region '+(i+1):'Your region')+' name'),ta('cm'+i+'h','Row '+(i+1)+' main hazard'),ta('cm'+i+'t','Row '+(i+1)+' building techniques'),ta('cm'+i+'s','Row '+(i+1)+' shared technique')]}))+
+'<h3>General home safety tips</h3><p>Check the three tips you would most want in a home you design.</p>'+
+'<div class="tips">'+[['Prevent falls','Handrails, lighting, no loose rugs'],['Respect electricity','GFCI near water, no overloaded circuits'],['Store chemicals safely','Labeled, locked storage'],['Plan your escape','Draw it, pick a meeting spot, practice twice a year'],['Maintain your alarms','Test monthly, replace batteries and old units'],['Design for visibility','Lighting, sightlines, sturdy locks']].map(function(t,i){return '<label><input type="checkbox" data-tip="'+i+'" data-l="Tip: '+t[0]+'"><span><b>'+t[0]+'</b><br>'+t[1]+'</span></label>'}).join('')+'</div>'+
+'<p>Why those three?</p>'+ta('tipwhy','Why I chose those three tips',3);
+
+$('#s-exit').innerHTML='<span class="tag">Exit ticket · 3 minutes</span><h2>Show what you can design</h2>'+
+'<p><b>1.</b> Name two safety features every bedroom needs.</p>'+ta('ex1','Exit 1: two bedroom safety features',2)+
+'<p><b>2.</b> Choose carbon monoxide or radon. How can a designer protect people from a hazard they cannot see or smell?</p>'+ta('ex2','Exit 2: protecting people from an invisible hazard',4)+
+'<p><b>3.</b> Pick a region. Name one building technique and the hazard it reduces.</p>'+
+'<div class="ids">'+'<label>Region'+inp('ex3r','Exit 3 region')+'</label><label>Technique'+inp('ex3t','Exit 3 technique')+'</label><label>Hazard'+inp('ex3h','Exit 3 hazard')+'</label></div>';
+
+$('#s-done').innerHTML='<span class="tag">All done?</span><h2>Turn in your work</h2><p>Your answers save in this browser on this device only. To turn in your work, click <b>Save my work as a file</b>. It saves one file with all your answers and both drawings. Then upload that file where your teacher asked. Check the file name before you upload.</p>'+
+'<div class="row"><button class="btn" id="dl" hidden>Save my work as a file</button><button class="btn alt" id="show">Show my answers as text</button><button class="btn alt" id="reset">Start over</button></div><p class="note" id="dlmsg" role="status"></p><p class="note">Using a shared computer? After you turn in your work, click Start over so the next student does not see your answers.</p><textarea id="out" readonly hidden aria-label="All my answers as text"></textarea><div class="row" id="copyrow" hidden><button class="btn alt" id="copy">Copy text</button><span class="note" id="cmsg" role="status"></span></div>';
+
+function fields(){return Array.prototype.slice.call(document.querySelectorAll('[data-k]'))}
+function restore(){fields().forEach(function(el){if(S[el.dataset.k]!=null)el.value=S[el.dataset.k]});
+var r=S.card;if(r){var e=document.querySelector('input[name=card][value="'+r+'"]');if(e)e.checked=true}
+document.querySelectorAll('[data-tip]').forEach(function(c){c.checked=!!S['tip'+c.dataset.tip]});tipLimit()}
+function progress(){var f=fields(),n=0;f.forEach(function(el){if(el.value.trim())n++});
+var extra=0,tot=f.length+2;if(S.card)extra++;var tips=0;document.querySelectorAll('[data-tip]').forEach(function(c){if(c.checked)tips++});if(tips)extra++;
+var p=Math.round((n+extra)/tot*100);$('#pfill').style.width=p+'%';$('#ptxt').textContent=p+'% complete'}
+function tipLimit(){var cs=Array.prototype.slice.call(document.querySelectorAll('[data-tip]'));var n=cs.filter(function(c){return c.checked}).length;cs.forEach(function(c){var off=n>=3&&!c.checked;c.disabled=off;c.parentNode.classList.toggle('dis',off)})}
+restore();progress();
+document.addEventListener('input',function(e){var el=e.target;if(el.dataset&&el.dataset.k){S[el.dataset.k]=el.value;save();progress()}});
+document.addEventListener('change',function(e){var el=e.target;if(el.name==='card'){S.card=el.value;save();progress()}
+if(el.dataset&&el.dataset.tip!=null){S['tip'+el.dataset.tip]=el.checked;save();tipLimit();progress()}});
+
+function hl(n,scroll){document.querySelectorAll('.mk,ol.notes li').forEach(function(x){x.classList.toggle('on',+x.dataset.n===n)});
+var li=document.querySelector('ol.notes li[data-n="'+n+'"]');if(scroll&&li)li.scrollIntoView({block:'nearest',behavior:'smooth'})}
+document.querySelectorAll('.mk').forEach(function(g){g.addEventListener('click',function(){hl(+g.dataset.n,true)});g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();hl(+g.dataset.n,true)}})});
+document.querySelectorAll('ol.notes li').forEach(function(li){li.addEventListener('click',function(){hl(+li.dataset.n,false)})});
+
+function initPad(id,w,h){var c=document.getElementById(id),x=c.getContext('2d');c.width=w;c.height=h;
+function blank(){x.fillStyle='#fff';x.fillRect(0,0,w,h)}blank();
+if(S[id]){var im=new Image();im.onload=function(){x.drawImage(im,0,0,w,h)};im.src=S[id]}
+var tools=document.querySelector('[data-pad="'+id+'"]'),col='#13263b',wid=3,down=false,lx=0,ly=0;
+tools.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+if(b.classList.contains('clr')){blank();S[id]='';save();return}
+col=b.dataset.c;wid=b.classList.contains('er')?22:3;tools.querySelectorAll('.sw').forEach(function(s){s.classList.toggle('on',s===b)})});
+function pos(e){var r=c.getBoundingClientRect();return [(e.clientX-r.left)*w/r.width,(e.clientY-r.top)*h/r.height]}
+c.addEventListener('pointerdown',function(e){down=true;c.setPointerCapture(e.pointerId);var p=pos(e);lx=p[0];ly=p[1];x.fillStyle=col;x.beginPath();x.arc(lx,ly,wid/2,0,7);x.fill()});
+c.addEventListener('pointermove',function(e){if(!down)return;var p=pos(e);x.strokeStyle=col;x.lineWidth=wid;x.lineCap='round';x.beginPath();x.moveTo(lx,ly);x.lineTo(p[0],p[1]);x.stroke();lx=p[0];ly=p[1]});
+function up(){if(!down)return;down=false;try{S[id]=c.toDataURL('image/png');save()}catch(e){}}
+c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up)}
+initPad('padBed',640,360);initPad('padReg',960,540);
+
+$('#show').addEventListener('click',function(){var out=$('#out'),lines=[];
+fields().forEach(function(el){var v=el.value.trim();if(v)lines.push((el.dataset.l||el.dataset.k)+': '+v)});
+if(S.card){var r=REG.filter(function(q){return q[0]===S.card})[0];if(r)lines.push('Region card: '+r[0]+' ('+r[1]+')')}
+document.querySelectorAll('[data-tip]').forEach(function(c){if(c.checked)lines.push(c.dataset.l)});
+out.value=lines.length?lines.join('\n'):'Nothing filled in yet.';out.hidden=false;$('#copyrow').hidden=false;out.scrollIntoView({block:'nearest',behavior:'smooth'})});
+$('#copy').addEventListener('click',function(){var out=$('#out'),m=$('#cmsg');out.select();
+var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+m.textContent=ok?'Copied.':'Text selected. Press Ctrl+C (or Cmd+C) to copy.'});
+var armed=false;
+$('#reset').addEventListener('click',function(){var b=$('#reset');
+if(!armed){armed=true;b.textContent='Click again to erase everything';setTimeout(function(){armed=false;b.textContent='Start over'},4000);return}
+S={};try{localStorage.removeItem(KEY)}catch(e){}location.reload()});
+
+var DL=null;
+function buildFile(){
+var h=function(s){return esc(s).replace(/\n/g,'<br>')};
+var nm=(S.name||'').trim();
+var out='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Safe Home work: '+h(nm||'Student')+'</title><style>body{font-family:Arial,Helvetica,sans-serif;max-width:860px;margin:24px auto;padding:0 16px;color:#13263b;line-height:1.5}h1{font-size:26px}h2{font-size:20px;border-bottom:2px solid #e8743b;padding-bottom:4px;margin-top:32px}dt{font-weight:bold;margin-top:12px}dd{margin:2px 0 0 0;padding:6px 10px;background:#f3efe6;border-radius:6px;white-space:pre-wrap}dd.e{color:#8a8a8a;font-style:italic}img{max-width:100%;border:1px solid #ccc;border-radius:6px}</style></head><body>';
+out+='<h1>Designing a Safe Home: Student Work</h1><p><b>Name:</b> '+h(nm)+' &nbsp; <b>Period:</b> '+h(S.period||'')+' &nbsp; <b>Date:</b> '+h(S.date||'')+'</p>';
+['s-donow','s-notes','s-p1','s-p2','s-p3','s-exit'].forEach(function(id){
+var sec=document.getElementById(id);out+='<h2>'+h(sec.querySelector('h2').textContent)+'</h2><dl>';
+Array.prototype.slice.call(sec.querySelectorAll('[data-k]')).forEach(function(el){var v=el.value.trim();out+='<dt>'+h(el.dataset.l||el.dataset.k)+'</dt><dd'+(v?'':' class="e"')+'>'+(v?h(v):'(blank)')+'</dd>'});
+if(id==='s-p2'){var r=REG.filter(function(q){return q[0]===S.card})[0];out+='<dt>Region card</dt><dd>'+(r?h('Card '+r[0]+': '+r[1]+' ('+r[2]+')'):'(none selected)')+'</dd>'}
+if(id==='s-p3'){var tp=[];document.querySelectorAll('[data-tip]').forEach(function(c){if(c.checked)tp.push(c.dataset.l.replace('Tip: ',''))});out+='<dt>Tips I chose</dt><dd>'+(tp.length?h(tp.join(', ')):'(none selected)')+'</dd>'}
+out+='</dl>';
+if(id==='s-notes'){out+='<h3>Bedroom sketch</h3><img alt="Bedroom sketch" src="'+document.getElementById('padBed').toDataURL('image/png')+'">'}
+if(id==='s-p2'){out+='<h3>Regional redesign sketch</h3><img alt="Regional redesign sketch" src="'+document.getElementById('padReg').toDataURL('image/png')+'">'}
+});
+return out+'</body></html>'}
+function setMsg(t){$('#dlmsg').textContent=t}
+if(window.claude&&claude.use){claude.use('downloads').then(function(d){if(d){DL=d;$('#dl').hidden=false}}).catch(function(){})}
+$('#dl').addEventListener('click',function(){
+if(!DL)return;
+var nm=(S.name||'student').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'student';
+var file='safe-home-'+nm+'.html';
+setMsg('Preparing your file...');
+var html;try{html=buildFile()}catch(e){setMsg('Something went wrong building your file. Try Show my answers as text instead.');return}
+DL.save({filename:file,data:html}).then(function(){setMsg('Saved as '+file+'. Upload that file where your teacher asked.')}).catch(function(err){
+var c=err&&err.code;
+if(c==='declined')setMsg('Not saved. Click the button again when you are ready.');
+else if(c==='rate_limited')setMsg('Please wait a moment and try again.');
+else setMsg('Saving a file is not available here. Use Show my answers as text instead.')})});
+</script>
+</body>
+</html>
